@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>🌤️ Admin Panel</title>
+  <style>
+    body { font-family: "Poppins", sans-serif; background: #f2f4f8; color: #222; text-align: center; }
+    header { background: #007bff; color: white; padding: 15px; font-size: 1.4rem; }
+    button { margin-top: 10px; padding: 8px 16px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    iframe { width: 100%; height: 85vh; border: none; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <!-- ✅ Protection Script -->
+  <script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <header>
+    🌤️ Admin Dashboard
+    <button onclick="logout()">🚪 Logout</button>
+  </header>
+
+  <!-- ✅ Load User Management inside iframe -->
+  <iframe src="add_user.html"></iframe>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("adminLoggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="add_user.html">Add User</a>
+  <div class="container">
+    <header>
+      <h1>🌦️ Smart Weather Dashboard</h1>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </header>
+
+    <section class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button id="fetchBtn">Get Weather</button>
+    </section>
+
+    <section id="weatherCard" class="card hidden">
+      <h2 id="cityName"></h2>
+      <p id="condition"></p>
+      <h3 id="temperature"></h3>
+      <p id="humidity"></p>
+      <p id="alert"></p>
+    </section>
+
+    <section id="prediction" class="card hidden">
+      <h3>🌡️ Predicted Next Temp</h3>
+      <p id="predictedTemp"></p>
+    </section>
+
+    <section id="historySection" class="card hidden">
+      <h3>📊 Temperature History</h3>
+      <canvas id="historyChart"></canvas>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
