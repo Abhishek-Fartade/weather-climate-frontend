@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8082/api/weather";
+const API_BASE = "https://weather-climate-ckd6.onrender.com/api/weather";
 
 const cityInput = document.getElementById("cityInput");
 const fetchBtn = document.getElementById("fetchBtn");
