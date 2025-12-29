@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a href="add_user.html">Add User</a>
+<a href="admin_login.html" onclick="openAddUser()">Add User</a>
   <div class="container">
     <header>
       <h1>🌦️ Smart Weather Dashboard</h1>
@@ -40,5 +40,20 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
+  <script>
+function openAddUser() {
+
+    // ✅ Check admin login
+    if (localStorage.getItem("adminLoggedIn") === "true") {
+        // Admin already logged in
+        window.location.href = "add_user.html";
+    } else {
+        // Admin not logged in → go to login page
+        window.location.href = "admin_login.html";
+    }
+
+}
+</script>
+
 </body>
 </html>

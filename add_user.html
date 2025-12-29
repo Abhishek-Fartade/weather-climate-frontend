@@ -110,6 +110,7 @@
 </head>
 <body>
   <a href="index.html">Home Page</a>
+  <!-- <a href="admin_login.html">Admin login</a> -->
 
   <h1>🌤️ Weather Alert - Manage Users</h1>
 
@@ -142,14 +143,15 @@
   </table>
 
   <script>
-    // ✅ Use correct backend URL (with context-path /weather if your backend uses it)
-   // const API_BASE = "http://localhost:8083/weather/api/users";
-   // const API_URL = "http://localhost:8083/weather/api/users";
-//const API_BASE = "http://localhost:8083/weather/api/users";
-//const API_URL = "http://localhost:8083/weather/api/users";
-const API_BASE = "https://weather-climate-ckd6.onrender.com/api/users";
+   if (localStorage.getItem("adminLoggedIn") !== "true") {
+  alert("Admin login required!");
+  window.location.href = "admin_login.html";
+}
 
-const API_URL = `${API_BASE}/users`;
+const API_BASE = "https://weather-climate-ckd6.onrender.com/weather/api/users";
+
+// const API_URL = `${API_BASE}/users`;
+
 
 
     const form = document.getElementById("userForm");
@@ -160,24 +162,11 @@ const API_URL = `${API_BASE}/users`;
 
 
 // ✅ check if admin logged in
-if (!localStorage.getItem("admin")) {
-  alert("You must login first!");
-  window.location.href = "admin_login.html";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ✅ CHECK ADMIN LOGIN (CORRECT KEY)
+// if (localStorage.getItem("adminLoggedIn") !== "true") {
+//   alert("Admin login required!");
+//   window.location.href = "admin_login.html";
+// }
 
 
     // ✅ Helper: fetch with better error logs

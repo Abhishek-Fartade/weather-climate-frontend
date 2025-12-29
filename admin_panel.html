@@ -11,7 +11,7 @@
   </style>
 </head>
 <body>
-  <!-- ✅ Protection Script -->
+
   <script>
     if (localStorage.getItem("adminLoggedIn") !== "true") {
       window.location.href = "login.html";
@@ -23,7 +23,7 @@
     <button onclick="logout()">🚪 Logout</button>
   </header>
 
-  <!-- ✅ Load User Management inside iframe -->
+  
   <iframe src="add_user.html"></iframe>
 
   <script>
